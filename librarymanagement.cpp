@@ -16,7 +16,6 @@ class Book {
 
 vector<Book> library;
 
-// Reads a whole integer line safely; re-asks on invalid input, exits cleanly on EOF.
 int readInt() {
     int x;
     while (!(cin >> x)) {
@@ -28,7 +27,7 @@ int readInt() {
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Invalid input! Please enter a number: ";
     }
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');  // discard rest of the line
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');  
     return x;
 }
 
@@ -40,7 +39,7 @@ void loadData() {
         fin.ignore(numeric_limits<streamsize>::max(), '\n');
         getline(fin, b.title);
         getline(fin, b.author);
-        if (!(fin >> b.stock)) break;  // incomplete/corrupt record: skip it
+        if (!(fin >> b.stock)) break; 
         fin.ignore(numeric_limits<streamsize>::max(), '\n');
         library.push_back(b);
     }
